@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IonContent,
   IonList,
@@ -9,8 +9,11 @@ import {
   IonItemOption,
   IonItemOptions,
   IonItemSliding,
+  IonButton,
+  IonIcon,
+  IonInput,
 } from "@ionic/react";
-
+import { star } from "ionicons/icons";
 interface ContainerProps {}
 
 const listRaw = [
@@ -32,6 +35,8 @@ const listRaw = [
   },
 ];
 const ExploreContainer: React.FC<ContainerProps> = () => {
+  const [input, setInput] = useState<string>("");
+
   return (
     <>
       <IonList>
@@ -59,6 +64,16 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           );
         })}
       </IonList>
+      <IonButton expand="full" color="secondary">
+        <IonIcon slot="start" icon={star}></IonIcon>
+        Hello World
+      </IonButton>
+      <h1>Enter Input</h1>
+      <IonInput
+        style={{ border: "1px solid" }}
+        value={input}
+        onIonChange={(e: any) => setInput(e.target.value)}
+      ></IonInput>
     </>
   );
 };
