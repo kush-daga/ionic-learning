@@ -64,9 +64,9 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           );
         })}
       </IonList>
-      <IonButton expand="full" color="secondary">
+      <IonButton expand="full" routerLink="/example" color="secondary">
         <IonIcon slot="start" icon={star}></IonIcon>
-        Hello World
+        Go to Example
       </IonButton>
       <h1>Enter Input</h1>
       <IonInput
